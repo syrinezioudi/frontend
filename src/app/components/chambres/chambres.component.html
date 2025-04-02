@@ -1,0 +1,11 @@
+<h2>Liste des Chambres</h2>
+
+<ul *ngIf="chambres.length > 0; else noChambres">
+  <li *ngFor="let chambre of chambres">
+    <strong>Numéro:</strong> {{ chambre.numeroChambre }} - <strong>Type:</strong> {{ chambre.typeC }}
+  </li>
+</ul>
+
+<ng-template #noChambres>
+  <p>Aucune chambre disponible.</p>
+</ng-template>

@@ -1,0 +1,16 @@
+<h2>Ajouter une Nouvelle Chambre</h2>
+<form (ngSubmit)="ajouterChambre()">
+  <div class="form-group">
+    <label>Numéro Chambre:</label>
+    <input type="number" [(ngModel)]="chambre.numeroChambre" name="numeroChambre" class="form-control" required>
+  </div>
+
+  <div class="form-group">
+    <label>Type de Chambre:</label>
+  <select [(ngModel)]="chambre.typeC" name="typeC" class="form-control" required>
+    <option *ngFor="let type of typesChambres" [value]="type">{{ type }}</option>
+  </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+</form>

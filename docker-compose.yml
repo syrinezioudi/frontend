@@ -1,0 +1,20 @@
+version: '3.8' 
+
+
+services:
+  angular-service: 
+    container_name: angular-container
+    image: hibaxbelghith/angular-app
+    restart: on-failure
+    volumes: # Volume binding
+    - './:/usr/src/app'
+    ports:
+      - "4201:4200" 
+    networks:
+      - my-shared-network
+    command: >
+      bash -c "npm start"
+
+networks:
+  my-shared-network:
+    external: true
